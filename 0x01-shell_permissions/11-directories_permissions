@@ -1,2 +1,2 @@
 #!/bin/bash
-chwon -R +x .
+chown -R +x .
