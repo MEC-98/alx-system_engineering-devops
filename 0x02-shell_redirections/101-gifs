@@ -1,2 +1,9 @@
 #!/bin/bash
-find -type  f -name "*.git" | rev | cut -d "/" -f 1 | cut -d '.' | rev | LC_ALL=C sort -f 
+
+shopt -s globstar nullglob nocaseglob
+for file in **/*.gif; do
+    if [[ -f "$file" ]]; then
+        echo "${file%.*}" | sort -f
+    fi
+done
+echo ""
