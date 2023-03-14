@@ -1,11 +1,2 @@
 #!/bin/bash
-
-# Split the PATH variable into an array using the colon separator
-IFS=: read -ra dirs <<< "$PATH"
-
-# Count the number of directories in the array
-num_dirs=${#dirs[@]}
-
-# Print the result
-echo $num_dirs
-
+echo $(('echo $PATH | grep -o ":/" | wc -l'+ 1))
